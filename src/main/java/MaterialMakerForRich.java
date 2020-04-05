@@ -1,12 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class FurnitureMakerForPoor extends FurnitureMaker {
-    FurnitureMakerForPoor(String name) {
-        super(name);
-    }
-
-    public List<Wood> getWoods(int woodAmount) {
+class MaterialMakerForRich {
+    List<Wood> createWoods(int woodAmount) {
         List<Wood> woods = new ArrayList<>();
         for (int i = 0; i < woodAmount; i++) {
             woods.add(new CheapWood());
@@ -14,7 +10,7 @@ public class FurnitureMakerForPoor extends FurnitureMaker {
         return woods;
     }
 
-    public Hammer getHammer() {
+    Hammer createHammer() {
         return new IronHammer();
     }
 }
