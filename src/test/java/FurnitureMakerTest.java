@@ -6,14 +6,16 @@ class FurnitureMakerTest {
 
     @Test
     void makeChair() {
-        FurnitureMaker furnitureMaker = new FurnitureMaker("root");
+        MaterialMaker materialMaker = new MaterialMakerForPoor();
+        FurnitureMaker furnitureMaker = new FurnitureMaker("root", materialMaker);
         Chair chair = furnitureMaker.makeChair();
         assertThat(chair).isNotNull();
     }
 
     @Test
     void makeDesk() {
-        FurnitureMaker furnitureMaker = new FurnitureMaker("root");
+        MaterialMaker materialMaker = new MaterialMakerForPoor();
+        FurnitureMaker furnitureMaker = new FurnitureMaker("root", materialMaker);
         Desk desk = furnitureMaker.makeDesk();
         assertThat(desk).isNotNull();
     }

@@ -4,9 +4,9 @@ class FurnitureMaker {
     private final String name;
     private final MaterialMaker materialMaker;
 
-    FurnitureMaker(String name) {
+    FurnitureMaker(String name, MaterialMaker materialMaker) {
         this.name = name;
-        this.materialMaker = new MaterialMakerForPoor();
+        this.materialMaker = materialMaker;
     }
 
     Chair makeChair() {
