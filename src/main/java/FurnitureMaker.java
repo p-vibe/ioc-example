@@ -1,7 +1,6 @@
-import java.util.ArrayList;
 import java.util.List;
 
-class FurnitureMaker {
+abstract class FurnitureMaker {
     private final String name;
 
     FurnitureMaker(String name) {
@@ -10,27 +9,17 @@ class FurnitureMaker {
 
     Chair makeChair() {
         List<Wood> woods = getWoods(Chair.WOOD_AMOUNT);
-
         Hammer hammer = getHammer();
         return hammer.makeChair(woods);
     }
 
     Desk makeDesk() {
         List<Wood> woods = getWoods(Desk.WOOD_AMOUNT);
-
         Hammer hammer = getHammer();
         return hammer.makeDesk(woods);
     }
 
-    private List<Wood> getWoods(int woodAmount) {
-        List<Wood> woods = new ArrayList<>();
-        for (int i = 0; i < woodAmount; i++) {
-            woods.add(new CheapWood());
-        }
-        return woods;
-    }
+    public abstract List<Wood> getWoods(int woodAmount);
 
-    private Hammer getHammer() {
-        return new IronHammer();
-    }
+    public abstract Hammer getHammer();
 }
