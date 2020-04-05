@@ -7,17 +7,15 @@ class FurnitureMaker {
         this.name = name;
     }
 
-    Chair makeChair() {
-        MaterialMakerForPoor materialMakerForPoor = new MaterialMakerForPoor();
-        List<Wood> woods = materialMakerForPoor.getWoods(Chair.WOOD_AMOUNT);
-        Hammer hammer = materialMakerForPoor.getHammer();
+    Chair makeChair(MaterialMakerForPoor materialMakerForPoor) {
+        List<Wood> woods = materialMakerForPoor.makeWoods(Chair.WOOD_AMOUNT);
+        Hammer hammer = materialMakerForPoor.makeHammer();
         return hammer.makeChair(woods);
     }
 
-    Desk makeDesk() {
-        MaterialMakerForPoor materialMakerForPoor = new MaterialMakerForPoor();
-        List<Wood> woods = materialMakerForPoor.getWoods(Desk.WOOD_AMOUNT);
-        Hammer hammer = materialMakerForPoor.getHammer();
+    Desk makeDesk(MaterialMakerForPoor materialMakerForPoor) {
+        List<Wood> woods = materialMakerForPoor.makeWoods(Desk.WOOD_AMOUNT);
+        Hammer hammer = materialMakerForPoor.makeHammer();
         return hammer.makeDesk(woods);
     }
 }

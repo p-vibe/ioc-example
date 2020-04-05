@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MaterialMakerForPoor {
-    public List<Wood> getWoods(int woodAmount) {
+    public List<Wood> makeWoods(int woodAmount) {
         List<Wood> woods = new ArrayList<>();
         for (int i = 0; i < woodAmount; i++) {
             woods.add(new CheapWood());
@@ -10,7 +10,7 @@ public class MaterialMakerForPoor {
         return woods;
     }
 
-    public Hammer getHammer() {
+    public Hammer makeHammer() {
         return new IronHammer();
     }
 }
