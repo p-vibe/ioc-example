@@ -9,22 +9,28 @@ class FurnitureMaker {
     }
 
     Chair makeChair() {
-        List<Wood> woods = new ArrayList<>();
-        for (int i = 0; i < Chair.WOOD_AMOUNT; i++) {
-            woods.add(new Wood());
-        }
+        List<Wood> woods = getWoods(Chair.WOOD_AMOUNT);
 
-        IronHammer ironHammer = new IronHammer();
+        IronHammer ironHammer = getIronHammer();
         return ironHammer.makeChair(woods);
     }
 
     Desk makeDesk() {
+        List<Wood> woods = getWoods(Desk.WOOD_AMOUNT);
+
+        IronHammer ironHammer = getIronHammer();
+        return ironHammer.makeDesk(woods);
+    }
+
+    private List<Wood> getWoods(int woodAmount) {
         List<Wood> woods = new ArrayList<>();
-        for (int i = 0; i < Desk.WOOD_AMOUNT; i++) {
+        for (int i = 0; i < woodAmount; i++) {
             woods.add(new Wood());
         }
+        return woods;
+    }
 
-        IronHammer ironHammer = new IronHammer();
-        return ironHammer.makeDesk(woods);
+    private IronHammer getIronHammer() {
+        return new IronHammer();
     }
 }
