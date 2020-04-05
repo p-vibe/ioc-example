@@ -2,22 +2,22 @@ import java.util.List;
 
 class FurnitureMaker {
     private final String name;
-    private final MaterialMakerForPoor materialMakerForPoor;
+    private final MaterialMaker materialMaker;
 
     FurnitureMaker(String name) {
         this.name = name;
-        this.materialMakerForPoor = new MaterialMakerForPoor();
+        this.materialMaker = new MaterialMakerForPoor();
     }
 
     Chair makeChair() {
-        List<Wood> woods = materialMakerForPoor.makeWoods(Chair.WOOD_AMOUNT);
-        Hammer hammer = materialMakerForPoor.makeHammer();
+        List<Wood> woods = materialMaker.makeWoods(Chair.WOOD_AMOUNT);
+        Hammer hammer = materialMaker.makeHammer();
         return hammer.makeChair(woods);
     }
 
     Desk makeDesk() {
-        List<Wood> woods = materialMakerForPoor.makeWoods(Desk.WOOD_AMOUNT);
-        Hammer hammer = materialMakerForPoor.makeHammer();
+        List<Wood> woods = materialMaker.makeWoods(Desk.WOOD_AMOUNT);
+        Hammer hammer = materialMaker.makeHammer();
         return hammer.makeDesk(woods);
     }
 }

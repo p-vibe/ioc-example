@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class MaterialMakerForRich {
-    List<Wood> createWoods(int woodAmount) {
+class MaterialMakerForRich implements MaterialMaker {
+    @Override
+    public List<Wood> makeWoods(int woodAmount) {
         List<Wood> woods = new ArrayList<>();
         for (int i = 0; i < woodAmount; i++) {
             woods.add(new CheapWood());
@@ -10,7 +11,8 @@ class MaterialMakerForRich {
         return woods;
     }
 
-    Hammer createHammer() {
+    @Override
+    public Hammer makeHammer() {
         return new IronHammer();
     }
 }
