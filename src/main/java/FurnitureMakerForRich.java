@@ -6,7 +6,6 @@ public class FurnitureMakerForRich extends FurnitureMaker {
         super(name);
     }
 
-    @Override
     public List<Wood> getWoods(int woodAmount) {
         List<Wood> woods = new ArrayList<>();
         for (int i = 0; i < woodAmount; i++) {
@@ -15,7 +14,6 @@ public class FurnitureMakerForRich extends FurnitureMaker {
         return woods;
     }
 
-    @Override
     public Hammer getHammer() {
         return new IronHammer();
     }

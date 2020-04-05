@@ -1,11 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class FurnitureMakerForPoor extends FurnitureMaker {
-    FurnitureMakerForPoor(String name) {
-        super(name);
-    }
-
+public class MaterialMakerForPoor {
     public List<Wood> getWoods(int woodAmount) {
         List<Wood> woods = new ArrayList<>();
         for (int i = 0; i < woodAmount; i++) {

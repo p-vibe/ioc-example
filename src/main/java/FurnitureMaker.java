@@ -1,6 +1,6 @@
 import java.util.List;
 
-abstract class FurnitureMaker {
+class FurnitureMaker {
     private final String name;
 
     FurnitureMaker(String name) {
@@ -8,18 +8,16 @@ abstract class FurnitureMaker {
     }
 
     Chair makeChair() {
-        List<Wood> woods = getWoods(Chair.WOOD_AMOUNT);
-        Hammer hammer = getHammer();
+        MaterialMakerForPoor materialMakerForPoor = new MaterialMakerForPoor();
+        List<Wood> woods = materialMakerForPoor.getWoods(Chair.WOOD_AMOUNT);
+        Hammer hammer = materialMakerForPoor.getHammer();
         return hammer.makeChair(woods);
     }
 
     Desk makeDesk() {
-        List<Wood> woods = getWoods(Desk.WOOD_AMOUNT);
-        Hammer hammer = getHammer();
+        MaterialMakerForPoor materialMakerForPoor = new MaterialMakerForPoor();
+        List<Wood> woods = materialMakerForPoor.getWoods(Desk.WOOD_AMOUNT);
+        Hammer hammer = materialMakerForPoor.getHammer();
         return hammer.makeDesk(woods);
     }
-
-    public abstract List<Wood> getWoods(int woodAmount);
-
-    public abstract Hammer getHammer();
 }
