@@ -1,11 +1,13 @@
 import java.util.List;
 
-class IronHammer {
-    Chair makeChair(List<Wood> woods) {
+class IronHammer implements Hammer {
+    @Override
+    public Chair makeChair(List<Wood> woods) {
         return new Chair(woods);
     }
 
-    Desk makeDesk(List<Wood> woods) {
+    @Override
+    public Desk makeDesk(List<Wood> woods) {
         return new Desk(woods);
     }
 }

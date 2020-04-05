@@ -1,1 +1,1 @@
-class Wood {}
+interface Wood {}
